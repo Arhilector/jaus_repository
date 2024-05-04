@@ -11,14 +11,15 @@ def init_db():
     c = conn.cursor()
     c.execute('''
         CREATE TABLE IF NOT EXISTS events (
-            id INTEGER PRIMARY KEY,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT,
             description TEXT,
             category TEXT,
             date TEXT,
             location TEXT,
             price TEXT,
-            contact_info TEXT
+            contact_info TEXT,
+            UNIQUE(title, date) 
         )
     ''')
     conn.commit()
@@ -52,7 +53,7 @@ def populate_db_with_sample_events():
     conn = sqlite3.connect('events.db')
     c = conn.cursor()
     c.executemany('''
-        INSERT INTO events (title, description, category, date, location, price, contact_info)
+        INSERT OR IGNORE INTO events (title, description, category, date, location, price, contact_info)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     ''', sample_events)
     conn.commit()
@@ -140,9 +141,7 @@ def handle_category(message):
     for event in events:
         bot.send_message(message.chat.id, f"{event[1]} - {event[4]} - {event[5]}")
 
-@bot.message_handler(func=lambda message: message.text == 'Добавить событие')
-def handle_add_event(message):
-    request_event_info(message)
+
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
