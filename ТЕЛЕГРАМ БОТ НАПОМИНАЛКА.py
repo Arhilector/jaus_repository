@@ -8,9 +8,9 @@ import os
 
 
 bot = telebot.TeleBot('7068949693:AAGfm3WjgISQ-GnOCmNZLbII7XKAvdnbWIc')
+
 morning_remember = "09:00"
 afternoon_remember = "12:00"
-
 evening_remember = "20:55"
 
 @bot.message_handler(commands=['start'])
