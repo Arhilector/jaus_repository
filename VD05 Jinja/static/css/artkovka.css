@@ -1,58 +1,51 @@
+.navbar {
+  justify-content: flex-start;
+  background-color: rgba(255, 248, 220, 0.8); /* Белый фон с 50% прозрачностью */
+}
 
-    .navbar {
-      justify-content: flex-start;
-    }
-    .navbar-nav {
-      flex-direction: row;
-    }
-    .navbar-nav .nav-item {
-      margin-left: 15px;
-    }
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      margin-left: 10px;
-    }
-    .navbar-brand img {
-      height: 40px;
-      width: auto;
-      margin-right: 10px;
-    }
-    #footer {
-      width: 100%;
-      padding: 20px;
-      background-color: #f8f9fa;
-    }
+.navbar-nav {
+  flex-direction: row;
+}
 
-  .carousel-image {
-    object-fit: cover;   /* Изображение будет обрезаться и масштабироваться */
-    width: 100%;
-    height: 600px;       /* Установите желаемую высоту слайда */
-  }
-  .card .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
 
-    .highlight {
-      color: #44080a;
-    }
-    .content-section {
-      margin-top: 20px;
-    }
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
 
+#footer {
+  width: 100%;
+  padding: 20px;
+  background-color: 255, 248, 220;
+}
 
-  .carousel-image {
-    object-fit: cover;   /* Изображение будет обрезаться и масштабироваться */
-    width: 100%;
-    height: 600px;       /* Установите желаемую высоту слайда */
-  }
-  .card .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.carousel-image {
+  object-fit: cover;   /* Изображение будет обрезаться и масштабироваться */
+  width: 100%;
+  height: 600px;       /* Установите желаемую высоту слайда */
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight {
+  color: #44080a;
+}
+
+.content-section {
+  margin-top: 20px;
+}

@@ -24,18 +24,14 @@ def nothome():
 
 @app.route('/about/')
 def about():
-    context = {
-        "caption": "кованые перила"
 
-    }
-    return render_template('about.html', **context)
+
+    return render_template('about.html', )
 
 @app.route('/perila/')
 def perila():
-    context = {
-        "caption": "Кованые перила"
-    }
-    return render_template('perila.html', **context)
+
+    return render_template('perila.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
