@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета пользователя</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Анкета пользователя</h1>
+        <form method="post" class="mt-4">
+            <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Город</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="hobby">Хобби</label>
+                <input type="text" class="form-control" id="hobby" name="hobby" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+
+        {% if user_data %}
+            <h2 class="mt-5">Введенные данные:</h2>
+            <ul class="list-group mt-3">
+                <li class="list-group-item"><strong>Имя:</strong> {{ user_data.name }}</li>
+                <li class="list-group-item"><strong>Город:</strong> {{ user_data.city }}</li>
+                <li class="list-group-item"><strong>Хобби:</strong> {{ user_data.hobby }}</li>
+                <li class="list-group-item"><strong>Возраст:</strong> {{ user_data.age }}</li>
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
