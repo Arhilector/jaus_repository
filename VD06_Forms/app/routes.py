@@ -12,5 +12,5 @@ def index():
         content = request.form['content']
         posts.append({'title': title, 'content': content})
         return redirect(url_for('index'))
-    return render_template('Index.html', posts=posts)
+    return render_template('blog.html', posts=posts)
 
