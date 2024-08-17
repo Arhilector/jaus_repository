@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f7; /* Светлый фон в стиле Apple */
+            color: #1d1d1f; /* Темно-серый текст */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        h1 {
+            font-weight: 600;
+            color: #1d1d1f; /* Глубокий темно-серый */
+            margin-top: 40px;
+        }
+        .card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень для карты */
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .btn-custom {
+            background-color: #2f4f4f; /* Цвет кнопки */
+            color: #ffffff;
+            border-radius: 24px;
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 16px;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #2b4444; /* Более темный оттенок при наведении */
+        }
+        .blockquote {
+            font-style: italic;
+            font-size: 24px;
+            color: #333333;
+        }
+        .blockquote-footer {
+            font-size: 18px;
+            color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Random Quote</h1>
+        <div class="card mt-5">
+            <div class="card-body text-center">
+                {% if quote %}
+                    <blockquote class="blockquote">
+                        <p>"{{ quote['content'] }}"</p>
+                        <footer class="blockquote-footer mt-2">{{ quote['author'] }}</footer>
+                    </blockquote>
+                {% else %}
+                    <p>No quote available at the moment.</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-custom">Другая цитата</a>
+        </div>
+    </div>
+
+    <!-- Подключение Bootstrap JS и зависимости Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
