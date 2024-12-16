@@ -19,8 +19,13 @@ def test_get_random_cat_success(mocker):
 
     result = get_random_cat()
 
-    # Проверяем, что функция вернула правильный URL
-    assert result == 'https://cdn2.thecatapi.com/images/b40.jpg'
+    # Проверяем, что функция вернула правильный словарь с данными
+    assert result == {
+        "id": "b40",
+        "url": "https://cdn2.thecatapi.com/images/b40.jpg",
+        "width": 900,
+        "height": 1200
+    }
     # Проверяем, что запрос был сделан по правильному URL
     mock_get.assert_called_once_with('https://api.thecatapi.com/v1/images/search')
 

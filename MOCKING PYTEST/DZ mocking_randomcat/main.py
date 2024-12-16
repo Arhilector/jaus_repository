@@ -6,7 +6,7 @@ def get_random_cat():
         response = requests.get('https://api.thecatapi.com/v1/images/search')
         if response.status_code == 200:
             data = response.json()
-            return data[0]['url']  # Возвращаем только URL изображения
+            return data[0]  # Возвращаем весь словарь с данными
         return None
     except Exception:
         return None
